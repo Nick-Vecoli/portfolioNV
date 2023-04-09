@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+        body{
+            background-image: url("{% static '/Images/nvecoli.jpg' %}") !important
+        }
+        </style>
+    <title>Document</title>
+</head>
+<body>
+
+    <header class="hero">
+        <div id="main-header">
+            <!-- Headings -->
+                <img class="logo" src="{% static '/Images/logo.png' %}" alt="My Logo">
+            <h1 class="title">    
+                Nicholas Vecoli - Portfolio - About:
+            </h1>
+    
+            <!-- Hamburger icon-->
+    
+            <img class="hamburger-icon" id="hamburger-icon" src="{% static 'Images/nav-icon.png' %}">
+    
+        <nav id="nav-bar" class="nav-bar">
+    
+            <!-- Nav Bar List -->
+    
+            <ul class="nav" id="nav">
+                <li><a class="nav" href="{% url 'index' %}">Home</a></li>
+                <li><a class="nav" href="{% url 'experience' %}">Experience</a></li>
+                <li><a class="nav" href="{% url 'resume' %}">Resume</a></li>
+                <li><a class="nav" href="{% url 'about' %}">About</a></li>
+                <li><a class="nav" href="{% url 'contacts' %}">Contact</a></li>
+                
+            </ul>
+    
+        </nav>
+        </div>
+        </header>
+    <div class="about-wrap">
+
+        <div class="about-image">
+            <img class="about-img" src="{% static 'Images/about-image.jpg' %}">
+        </div>
+
+        <div class="about-text">
+        <h2>ABOUT ME:</h2>
+        <br>
+        <p>
+            Hello, my name is Nicholas Vecoli, I am in my final year completing a Bachelor of Information Technology at Deakin University. Areas of interest throughout my studies have been in programming, html and CSS and User design.
+         </p>
+         <br>
+         <p>  
+            Prior to this degree I completed a Diploma of Interactive Digital Media at RMIT University. This course taught me the value of designing and creating with an end user in mind to maximise functionality and aesthetic appeal. In conjunction with my I.T degree I believe that I have developed a skill set which maximises both form and function in the way that solutions can be addressed and ultimately met.  
+        </p>
+        <br> 
+        <p>   
+            In practicality, this has led to me attaining experience in many areas such as UI design, logo and typography design. Right now however I’m working on developing and improving on Web Development and DevOps skill sets as it’s where I ultimately see myself wanting to build a career. 
+        </p>
+    </div>
+
+    
+    </div>
+
+    <div id="footer">
+        <p>&copy; Copyright 2023 - Nicholas Vecoli</p>
+    </div>
+    <script src="{% static 'javascript/script.js' %}"></script>
+</body>
+</html>
