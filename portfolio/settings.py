@@ -31,7 +31,6 @@ ALLOWED_HOSTS = ['52.64.115.152','nickvecoli.hopto.org','localhost', '127.0.0.1'
 # Application definition
 
 INSTALLED_APPS = [
-    'contact.apps.ContactsConfig',
     'pages.apps.PagesConfig',
     'django.contrib.admin',
     'django.contrib.auth',

@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
@@ -14,8 +13,7 @@
             background-image: url("{% static '/Images/nvecoli.jpg' %}") !important
         }
         </style>
-
-    <title>Resume</title>
+    <title>Experience</title>
 </head>
 <body>
 
@@ -24,7 +22,7 @@
             <!-- Headings -->
                 <img class="logo" src="{% static '/Images/logo.png' %}" alt="My Logo">
             <h1 class="title">    
-                Nicholas Vecoli - Portfolio - Resume:
+                {% block title %}{% endblock %}
             </h1>
     
             <!-- Hamburger icon-->
@@ -40,18 +38,19 @@
                 <li><a class="nav" href="{% url 'experience' %}">Experience</a></li>
                 <li><a class="nav" href="{% url 'resume' %}">Resume</a></li>
                 <li><a class="nav" href="{% url 'about' %}">About</a></li>
-               
+                
                 
             </ul>
     
         </nav>
         </div>
-        </header><header class="hero">
+        </header>
 
-    <div class="resume-div">
-    <img class="resume" src="{% static 'Images/Resume-Nicholas-Vecoli.jpg' %}">
-    </div>
+        {% block content %}
+        
+        {% endblock %}
 
+    
     <div id="footer">
         <p>&copy; Copyright 2023 - Nicholas Vecoli</p>
     </div>
