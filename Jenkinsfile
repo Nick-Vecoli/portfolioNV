@@ -8,7 +8,7 @@ pipeline {
                     #!/bin/sh
                     echo 'Pulling down changes from Github'
 
-                    cd /usr/local/bin/django/portfolio-website
+                    cd /usr/local/bin/django/portfolioNV
                     sudo git pull
 
                     echo 'Git Repo has been updated'
@@ -23,7 +23,7 @@ pipeline {
 
                     source /usr/local/bin/django/venv/bin/activate
 
-                    pip install -r /usr/local/bin/django/portfolio-website/requirements.txt
+                    pip install -r /usr/local/bin/django/portfolioNV/requirements.txt
 
                     echo 'Python Dependancies have been updated'
                     
@@ -38,7 +38,7 @@ pipeline {
 
                     source /usr/local/bin/django/venv/bin/activate
 
-                    cd /usr/local/bin/django/portfolio-website
+                    cd /usr/local/bin/django/portfolioNV
 
                     python manage.py collectstatic --noinput
 
