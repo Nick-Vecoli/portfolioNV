@@ -40,7 +40,7 @@ pipeline {
 
                     cd /usr/local/bin/django/portfolioNV
 
-                    python manage.py collectstatic --noinput
+                    sudo python manage.py collectstatic --noinput
 
                     echo 'Django application has been updated'
 
