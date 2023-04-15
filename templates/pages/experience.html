@@ -1,50 +1,12 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-        body{
-            background-image: url("{% static '/Images/nvecoli.jpg' %}") !important
-        }
-        </style>
-    <title>Experience</title>
-</head>
-<body>
+{% block pgname %}Experience{% endblock %}
 
-    <header class="hero">
-        <div id="main-header">
-            <!-- Headings -->
-                <img class="logo" src="{% static '/Images/logo.png' %}" alt="My Logo">
-            <h1 class="title">    
-                Nicholas Vecoli - Portfolio - Experience:
-            </h1>
-    
-            <!-- Hamburger icon-->
-    
-            <img class="hamburger-icon" id="hamburger-icon" src="{% static 'Images/nav-icon.png' %}">
-    
-        <nav id="nav-bar" class="nav-bar">
-    
-            <!-- Nav Bar List -->
-    
-            <ul class="nav" id="nav">
-                <li><a class="nav" href="{% url 'index' %}">Home</a></li>
-                <li><a class="nav" href="{% url 'experience' %}">Experience</a></li>
-                <li><a class="nav" href="{% url 'resume' %}">Resume</a></li>
-                <li><a class="nav" href="{% url 'about' %}">About</a></li>
-                
-                
-            </ul>
-    
-        </nav>
-        </div>
-        </header>
+{% block title %} Nicholas Vecoli - Experience {% endblock %}
+
+{% block content %}
+
 
         <div class="experience-wrap1">
 
@@ -193,9 +155,11 @@
         </div>
     </div>
 
+    {% endblock %}
+
     <div id="footer">
         <p>&copy; Copyright 2023 - Nicholas Vecoli</p>
     </div>
     <script src="{% static 'javascript/script.js' %}"></script>
-</body>
+    </body>
 </html>

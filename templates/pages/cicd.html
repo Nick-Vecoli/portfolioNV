@@ -1,31 +1,62 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block pgname %}CI/CD Project{% endblock %}
+
 {% block title %} Nicholas Vecoli - CI/CD Project {% endblock %}
 
 {% block content %}
-<div class="about-wrap">
+
+<div class="cicd-wrap">
 
     <div class="about-image">
-        <img class="about-img" src="{% static 'Images/about-image.jpg' %}">
+        <a href ="https://github.com/Nick-Vecoli/portfolioNV"><img class="repository-img" src="{% static 'Images/repository.png' %}"></a>
     </div>
 
     <div class="about-text">
-    <h2>ABOUT ME:</h2>
+    <h2>CONTINUOUS INTEGRATION AND CONTINUOUS DEPLOYMENT (CI/CD) PROJECT - DEVELOPING A PORTFOLIO WEBSITE:</h2>
+    <br>
+    <br>
     <br>
     <p>
-        Hello, my name is Nicholas Vecoli, I am in my final year completing a Bachelor of Information Technology at Deakin University. Areas of interest throughout my studies have been in programming, html and CSS and User design.
-     </p>
-     <br>
-     <p>  
-        Prior to this degree I completed a Diploma of Interactive Digital Media at RMIT University. This course taught me the value of designing and creating with an end user in mind to maximise functionality and aesthetic appeal. In conjunction with my I.T degree I believe that I have developed a skill set which maximises both form and function in the way that solutions can be addressed and ultimately met.  
+    In this Continuous Integration and Continuous Deployment (CI/CD) project aimed at developing a portfolio website, my goal was not only to meet the project requirements within a given time frame but also to expand my skill set. The project provided valuable experience in troubleshooting, problem-solving, and creating a functional prototype of a project.
     </p>
-    <br> 
-    <p>   
-        In practicality, this has led to me attaining experience in many areas such as UI design, logo and typography design. Right now however I’m working on developing and improving on Web Development and DevOps skill sets as it’s where I ultimately see myself wanting to build a career. 
+    <br>
+    </div>
+    <div class="about-image">
+    <img class="cicd-img" src="{% static 'Images/cicd1.png' %}">
+    </div>
+    <p>    
+    To achieve this, I set up an EC2 instance on AWS with Red Hat Enterprise Linux (RHEL) and configured security groups to allow TCP connections from specific ports, such as port 80 for Nginx, port 8080 for Jenkins, port 22 for SSH, port 5432 for Postgres, port 8000 for Django, and port 443 for HTTPS. I assigned a static IP address to the EC2 instance for easy SSH access and installed java-11-openjdk, a prerequisite for Jenkins installation. I created a Jenkins-admin user through the EC2 terminal to proceed with Jenkins installation.
     </p>
-</div>
+    <br>
+    <img class="cicd-img" src="{% static 'Images/cicd2.png' %}">
+    <p>    
+    However, installing Python on the EC2 instance was more challenging than expected, as RHEL requires a specific version of Python to function correctly. After installing the correct version, I set up and installed Django on the EC2 instance, primarily relying on a tutorial provided by a Udemy course. I used code, commands, and permission settings from various resources. 
+    </p>
+    <br>
+    <p>
+    After registering the domain name, I pointed it to the static IP allocated on AWS using the domain management GUI. Incoming requests were picked up by Nginx, which listens actively on port 80. Nginx then passed these requests onto port 8000, where the Django application was set up, feeding the HTTP response back to the domain. Finally, I obtained security certificates from https://certbot.eff.org/instructions?ws=nginx&os=fedora to offer a secure (HTTPS) connection to the website.
+    </p>
+    <br>
+    <p>    
+    Additionally, I created a pipeline within Jenkins that would take any changes made from my local development server via a git pull and deploy them to the live server, making the process of updating and changing the webpage more fluid and automated.
+    </p>
+    <br>
+    <img class="cicd-img" src="{% static 'Images/cicd3.png' %}">
+    <p>    
+    Looking forward, my 3-month plan for this web portfolio includes the addition of dynamic functionality in the form of a contact form that submits through a POST method within Django to save data to a database and send it to an email address. Currently, this functionality is in the development stage, and I need to address debugging issues to ensure its smooth implementation. Overall, this project provided an excellent opportunity to hone my skills in DevOps and CI/CD processes while also delivering a functional portfolio website.
+    </p>
+
+    </div>
 
 
 </div>
 {% endblock %}
+
+<div id="footer">
+    <p>&copy; Copyright 2023 - Nicholas Vecoli</p>
+</div>
+<script src="{% static 'javascript/script.js' %}"></script>
+</body>
+</html>

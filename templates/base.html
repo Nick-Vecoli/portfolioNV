@@ -13,7 +13,7 @@
             background-image: url("{% static '/Images/nvecoli.jpg' %}") !important
         }
         </style>
-    <title>Experience</title>
+    <title>{% block pgname %}{% endblock %}</title>
 </head>
 <body>
 
@@ -36,9 +36,10 @@
             <ul class="nav" id="nav">
                 <li><a class="nav" href="{% url 'index' %}">Home</a></li>
                 <li><a class="nav" href="{% url 'experience' %}">Experience</a></li>
+                <li><a class="nav" href="{% url 'cicd' %}">CI/CD</a></li>
                 <li><a class="nav" href="{% url 'resume' %}">Resume</a></li>
                 <li><a class="nav" href="{% url 'about' %}">About</a></li>
-                
+              
                 
             </ul>
     
